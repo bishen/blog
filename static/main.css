@@ -1,0 +1,213 @@
+@font-face {
+    font-family: hwxh;
+    src: url('xh.ttf');
+    /* IE9+ */
+}
+
+body {
+    margin: 0;
+    font-family: hwxh, '微软雅黑';
+    font-size: 16px;
+    background-color: #f8f8f8;
+    line-height: 180%
+}
+
+a {
+    text-decoration: none;
+    color: darkblue
+}
+
+a:active {
+    outline: 0 none
+}
+
+a:visited,
+a[tabindex='-1']:focus {
+    outline: 0 none
+}
+
+a:hover {
+    color: red;
+    outline: 0 none
+}
+
+.header {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 60px;
+    font-size: 20px;
+    color: #999;
+    padding: 10px 0;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 30px
+}
+
+.header span {
+    color: #fff;
+    background-color: dodgerblue;
+    padding: 2px 6px;
+    font-size: 24px;
+}
+
+.header i {
+    font-style: normal
+}
+
+.header b {
+    color: #ff4444
+}
+
+.navigation {
+    line-height: 44px;
+    background-color: #fff;
+    font-size: 18px;
+    overflow: hidden;
+    border-top: 2px #ff4444 solid;
+    border-bottom: 1px solid #ccc;
+}
+
+.navigation a {
+    padding: 10px 36px;
+    color: #000;
+    border-left: 1px solid #eee
+}
+
+.navigation a:hover {
+    background-color: #ff4444;
+    color: #fff
+}
+
+.location {
+    margin: 0 auto;
+    width: 1042px;
+    line-height: 30px;
+    font-size: 14px;
+    height: 30px;
+    color: #999
+}
+
+.footer {
+    line-height: 50px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    background-color: #eee;
+}
+
+.center {
+    margin: 0 auto;
+    width: 1042px
+}
+
+.main {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 1000px;
+    padding: 20px;
+    min-height: 700px;
+    border: 1px solid #ddd;
+}
+
+.main h1 {
+    line-height: 40px;
+    text-align: center
+}
+
+.main time {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #999
+}
+
+.main .content {
+    padding-bottom: 60px
+}
+
+.ls {
+    padding: 10px 0
+}
+
+.ls .tt {
+    font-size: 24px;
+    line-height: 40px
+}
+
+.ls .tt .del {
+    float: right;
+    margin-left: 20px;
+    font-size: 14px
+}
+
+.ls p {
+    margin: 0;
+    padding: 6px 0;
+    line-height: 28px
+}
+
+.ls em {
+    font-style: normal;
+    line-height: 30px;
+    color: darkorange;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.notfound {
+    margin: 20px auto;
+    width: 800px;
+    padding: 150px 50px 300px 300px;
+}
+
+.notfound h2 {
+    font-size: 24px;
+    color: rgb(241, 103, 14)
+}
+
+.notfound span {
+    color: #999;
+    font-size: 18px;
+    line-height: 50px
+}
+
+.notfound b {
+    color: #666;
+    font-size: 18px
+}
+
+ol.hd {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #f8f8f8;
+    line-height: 30px;
+    overflow: hidden
+}
+
+ol.hd li {
+    float: left;
+    width: 31%;
+    padding-left: 2%;
+    border-left: 1px solid #efefef
+}
+
+ul.ls {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 30px
+}
+
+ul.ls li {
+    float: left;
+    padding-left: 2%;
+    width: 31%;
+    border-left: 1px solid #efefef
+}
+
+form.add {
+    clear: both;
+    padding: 10px 0;
+    overflow: hidden
+}

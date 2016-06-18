@@ -1,0 +1,20 @@
+extends ./layout.jade
+block title
+    title=404 NotFound
+block content
+    .notfound
+        h2 抱歉，当前网页不存在
+        span 404 page not found
+        br
+        br
+        b 最有可能的原因是：
+        br
+        | 你输入的网址可能不正确
+        br
+        | 链接可能已过期
+        br 
+        | 别担心，你可能点击链接继续浏览：
+        br
+        a(href="/") 网站首页
+        | &nbsp; | &nbsp;
+        a(href="javascript:window.history.back()") 返回上一页

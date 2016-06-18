@@ -1,0 +1,15 @@
+extends ./layout.jade
+block title
+    title #{B.Title} - blog.bishen.org
+    
+block content
+    .location
+    .main
+        h1=B.Title
+        time=B.CreatedAt
+            | &nbsp; 
+            if Is
+                a(href="/_edit/"+B.ID) 编辑 
+                | &nbsp; 
+                a(href="/_delete/"+B.ID) 删除
+        .content!=B.Content

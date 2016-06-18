@@ -1,0 +1,89 @@
+extends ./layout.jade
+block title
+    title 分类管理
+    script.
+      this.Http = function() {
+            var error, error1, obj;
+            obj = false;
+            try {
+            obj = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (error) {
+            try {
+                obj = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (error1) {
+                obj = false;
+            }
+            }
+            if (!obj && typeof XMLHttpRequest !== 'undefined') {
+            obj = new XMLHttpRequest();
+            }
+            return obj;
+        };
+        this.post = function(Str, Url, backFunc) {
+            var xml;
+            xml = this.Http();
+            xml.open("POST", Url, true);
+            xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+            xml.onreadystatechange = function() {
+            if (xml.readyState === 4) {
+                if (xml.status === 200) {
+                return backFunc(xml.responseText);
+                } else {
+                return backFunc(null);
+                }
+            }
+            };
+            xml.send(Str);
+            return false;
+        };
+          this.get = function(Url, backFunc) {
+            var xml;
+            xml = this.Http();
+            xml.open("GET", Url, true);
+            xml.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+            xml.onreadystatechange = function() {
+            if (xml.readyState === 4) {
+                if (xml.status === 200) {
+                return backFunc(xml.responseText);
+                } else {
+                return backFunc(null);
+                }
+            }
+            };
+            xml.send(null);
+            return false;
+        };
+        function save(fm){
+            var ip = fm.getElementsByTagName('input');
+            var t = ip[0].value;
+            var u = ip[1].value;
+            this.post('title='+t+'&url='+u,'/_class',function(id){
+                if(Number(id)==1){
+                    var ul = document.createElement('ul');
+                    ul.className = "ls"
+                    ul.innerHTML = "<li>"+id+"</li><li>"+t+"</li><li>"+u+"</li>";
+                    document.getElementById('cls').appendChild(ul);
+                }
+                else{
+                    alert("增加失败！");
+                }
+            });
+            return false;
+        }
+
+block content
+    .main
+        #cls
+            ol.hd
+                li ID
+                li Title
+                li Url
+            each rs in Data
+                ul.ls
+                    li=rs.ID
+                    li=rs.Title
+                    li=rs.Url
+        form.add(onsubmit="return save(this)")
+            input(type="text",placeholder="title")
+            input(type="text",placeholder="url")
+            input(type="submit",value=" save ")

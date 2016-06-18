@@ -1,0 +1,30 @@
+extends ./layout.jade
+block title
+    title 创建
+    link(href="/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css",rel="stylesheet")
+    link(href="/ckeditor/plugins/codesnippet/lib/highlight/styles/zenburn.css",rel="stylesheet")
+    script(type='text/javascript', src="/ckeditor/ckeditor.js")
+    script(src="/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js")
+    style.
+        body{background-color:#F7F7F7;font-size:16px}
+        input.t{width:96%;padding:5px;height:24px;font-size:16px;}
+    
+block content
+    .main
+        form(method="post")
+            input.t(name="title")
+            br
+            each cs in Cls
+                lable
+                    input(type="radio",name="cid",value=cs.ID)
+                    | #{cs.Title} 
+            | &nbsp; 
+            a(href="_class") 分类管理
+            br
+            textarea#container(name="content")
+            br
+            input(type="submit",value="保存")
+
+    script.
+        hljs.initHighlightingOnLoad();
+        CKEDITOR.replace('container');

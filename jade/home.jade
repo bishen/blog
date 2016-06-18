@@ -1,0 +1,17 @@
+extends ./layout.jade
+block title
+    title blog.bishen.org
+block content
+    .location
+    .main
+        if Is
+            button(onclick="window.location.assign('/_add')") 发布新文章
+        each rs in Data
+            .ls
+                .tt
+                    a(href="view/"+rs.ID+".html")=rs.Title
+                    if Is
+                        a.del(href="_edit/"+rs.ID) 编辑 
+                        a.del(href="_delete/"+rs.ID) 删除
+                p=subtext(rs.Content,0,160)
+                em=rs.CreatedAt

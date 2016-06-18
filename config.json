@@ -1,0 +1,6 @@
+{
+    "database": "sqlite3",
+    "connection": "./db",
+    "web_account": "aaa",
+    "web_password": "bbb"
+}
