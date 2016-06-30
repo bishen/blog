@@ -211,3 +211,42 @@ form.add {
     padding: 10px 0;
     overflow: hidden
 }
+
+.login {
+    margin: 0;
+    padding: 20px
+}
+
+.login lable {
+    display: block;
+    padding: 6px 0;
+    overflow: hidden
+}
+
+.login span {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    padding-right: 5px
+}
+
+.login lable input {
+    border: 2px solid #ccc;
+    width: 250px;
+    padding: 4px;
+    height: 20px;
+    font-size: 16px
+}
+
+.login input[type=submit] {
+    margin: 10px 0 0 130px;
+    border: none;
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 5px 20px;
+    font-size: 16px
+}
+
+.login input[type=submit]:hover {
+    background-color: brown
+}

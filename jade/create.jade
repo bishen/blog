@@ -8,16 +8,19 @@ block title
     style.
         body{background-color:#F7F7F7;font-size:16px}
         input.t{width:96%;padding:5px;height:24px;font-size:16px;}
-    
+        select{margin:10px 0;padding:5px;height:30px;width:200px; background: #eee}
 block content
+    .location BLOG.BISHEN.ORG &gt; 发布文章 
     .main
         form(method="post")
             input.t(name="title")
             br
-            each cs in Cls
-                lable
-                    input(type="radio",name="cid",value=cs.ID)
-                    | #{cs.Title} 
+            select(name="cid")
+                each cs in Cls
+                    if cs.Url == "other"
+                        option(value=cs.ID,selected)=cs.Title
+                    else
+                        option(value=cs.ID)=cs.Title
             | &nbsp; 
             a(href="_class") 分类管理
             br
